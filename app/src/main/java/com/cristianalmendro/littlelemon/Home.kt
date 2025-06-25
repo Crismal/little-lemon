@@ -26,7 +26,6 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -79,6 +78,7 @@ fun Home(navController: NavHostController, context: Context, dao: MenuItemDao) {
 
 
     Column(modifier = Modifier.fillMaxSize()) {
+        // HEADER AREA
         Box(
             modifier = Modifier
                 .height(90.dp)
@@ -154,7 +154,7 @@ fun Home(navController: NavHostController, context: Context, dao: MenuItemDao) {
             )
         }
 
-        // Menu Breakdown
+        // MENU BREAKDOWN
 
         LazyRow(
             modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
@@ -187,6 +187,7 @@ fun Home(navController: NavHostController, context: Context, dao: MenuItemDao) {
                 }
             }
         }
+        // FOOD MENU LIST
 
         MenuItemList(filteredMenuItems)
     }

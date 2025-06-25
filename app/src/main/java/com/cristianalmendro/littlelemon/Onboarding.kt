@@ -39,15 +39,15 @@ import com.cristianalmendro.littlelemon.ui.theme.Yellow
 @Composable
 fun Onboarding(navController: NavHostController, context: Context) {
     var firstname by remember {
-        mutableStateOf("Cristian")
+        mutableStateOf("")
     }
 
     var lastname by remember {
-        mutableStateOf("Almendro")
+        mutableStateOf("")
     }
 
     var email by remember {
-        mutableStateOf("cristian@gmail.com")
+        mutableStateOf("")
     }
 
     fun formValidation() {
