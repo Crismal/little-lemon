@@ -7,7 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 
 @Composable
-fun MyNavigation(navController: NavHostController, context: Context) {
+fun MyNavigation(navController: NavHostController, context: Context, dao: MenuItemDao) {
 
     val sharedPreferences = context.getSharedPreferences("UserData", Context.MODE_PRIVATE)
     val isLogged =
@@ -20,7 +20,7 @@ fun MyNavigation(navController: NavHostController, context: Context) {
         startDestination = if (isLogged) Home.navigationRoute else Onboarding.navigationRoute
     ) {
         composable(Onboarding.navigationRoute) { Onboarding(navController, context) }
-        composable(Home.navigationRoute) { Home(navController, context) }
+        composable(Home.navigationRoute) { Home(navController, context, dao) }
         composable(Profile.navigationRoute) { Profile(navController, context) }
     }
 }
